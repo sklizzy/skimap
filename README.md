@@ -1,7 +1,7 @@
 # leadskimap
 
 
-Scraper looks for relevant divs and grabs lift-name and lift-status and puts in a table 
+Scraper looks for relevant divs and grabs lift-name and lift-status and puts in a table <br>
  Example:  <i><p>
             < div data-v-9ad5b0fa="" data-v-18530604="" class="lift col no-stretch closed-lift">
               < div data-v-9ad5b0fa="" class="lift-collapsed">
@@ -11,6 +11,7 @@ Scraper looks for relevant divs and grabs lift-name and lift-status and puts in 
              < div data-v-9ad5b0fa="" <b>class="lift-status closed">Closed</div></b>
            </p>
           </i>
+          <br>
 LED Assigns led number to lift-name and compares table values if open or closed which determines led color
 It requests every 7 minutes which can be changed based on processing/network requirements
 
