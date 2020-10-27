@@ -2,7 +2,7 @@
 
 
 Scraper looks for relevant divs and grabs lift-name and lift-status and puts in a table 
- Example: <i><!--
+ Example: <!--- <i>
             <div data-v-9ad5b0fa="" data-v-18530604="" class="lift col no-stretch closed-lift">
               <div data-v-9ad5b0fa="" class="lift-collapsed">
                 <div data-v-9ad5b0fa="" class="lift-title-box">
