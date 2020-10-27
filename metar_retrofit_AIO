@@ -56,7 +56,7 @@ mydict = {
 
 #get weather info 
 
-url = "https://www.aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=1.5&stationString="
+url = "https://liftie.info/resort/steamboat"
 for airportcode in airports:
 	if airportcode == "NULL":
 		continue
