@@ -1,6 +1,7 @@
 # import libraries
 from urllib.request import urlopen
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup 
+import re
 
 # specify the url
 url = "https://www.steamboat.com/the-mountain/mountain-report#/lifts"
@@ -15,16 +16,16 @@ except:
 soup = BeautifulSoup(page, 'html.parser')
 
 # Take out the <div> of name and get its value
-content = soup.find('div', {"class": "lift-title-box"})
 
-lift_name = ''
-for i in content.findAll('class: "lift-name"'):
-    lift_name = article + ' ' +  i.text
-print(article)
+divparent = soup.find_all('div', attrs={'class':'lift-title-box'})[0]
 
-# Saving the scraped text
-with open('scraped_text.txt', 'w') as file:
-    file.write(article)
+table = divparent.find('table')
+
+for row in table.find_all('tr'):
+    for data in row.find_all('td'):
+        print data.string
+        
+
     
                                             # Credit to https://towardsdatascience.com/web-scraping-using-python-4cb2faade338
                                             # Written by Kaustumbh Jaiswal
