@@ -1,15 +1,12 @@
 # leadskimap
 
 
-Scraper looks for relevant divs and grabs lift-name and lift-status and puts in a table <br>
- Example:  <i><p>
-            < div data-v-9ad5b0fa="" data-v-18530604="" class="lift col no-stretch closed-lift">
-              < div data-v-9ad5b0fa="" class="lift-collapsed">
-                < div data-v-9ad5b0fa="" class="lift-title-box">
-                  < div data-v-9ad5b0fa="" class="lift-hours closed">9:00AM - 3:00PM</div>
-                 < div data-v-9ad5b0fa="" <b>class="lift-name">Bar-UE</div></b>
-             < div data-v-9ad5b0fa="" <b>class="lift-status closed">Closed</div></b>
-           </p>
+Scraper looks for relevant divs and grabs lift-name and lift-status + puts in a table? <br>
+ Example:  <i> @ https://liftie.info/resort/steamboat
+ 
+           <br> lifts are in a unordered list <br> where each item is listed under the li class 'lift'
+          <br> wherein there are two span classes, witht he name of the lift and the status (open/closed) boolean
+          <br> 
           </i>
           <br>
 LED Assigns led number to lift-name and compares table values if open or closed which determines led color
