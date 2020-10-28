@@ -1,0 +1,26 @@
+from bs4 import BeautifulSoup
+import requests
+import csv
+
+source = requests.get('https://liftie.info/resort/steamboat').text
+
+soup = BeautifulSoup(source, 'lxml')
+
+csv_file = open('liftie_scrape.csv', 'w')
+
+csv_writer = csv.writer(csv_file)
+csv_writer.writerow(['lift_name', 'lift_status'])
+
+for basics in soup.find_all('basics'):
+	lift_name = article.li.a.text
+	print(lift_name)
+
+	lift_status = basics.find('span', class_='status Is-closed').span
+	print(lift_status)
+
+	print()
+
+	csv.writer.writerow([lift_name, lift_status])
+
+csv_file.close()
+	
