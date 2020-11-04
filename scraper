@@ -1,26 +1,19 @@
 from bs4 import BeautifulSoup 
 import requests
-import csv
+#import csv
 
 source = requests.get('https://liftie.info/resort/steamboat').text
-
-
 soup = BeautifulSoup(source, 'lxml')
 
-csv_file = open('liftie_scrape.csv', 'w')
+#csv_file = open('liftie_scrape.csv', 'w')
 
-csv_writer = csv.writer(csv_file)
-csv.writer.writerow(['lift_name', 'lift_status'])
+#csv_writer = csv.writer(csv_file)
+#csv.writer.writerow(['name', 'status'])
 
-for basics in soup.find_all('basics'):
-	lift_name = basics.find('span', class_='name').text
-	print(lift_name)
+basics = soup.find('div', {'class': 'lifts-status'})
 
-	lift_status = basics.find('span', class_='status Is-closed')
-	#if Closed or Open // Boolean value in table
+print(basics.prettify())
 
-	print()
+#csv_writer.writerow([name, status])
 
-	csv_writer.writerow([lift_name, lift_status])
-
-csv_file.close()
+#csv_file.close()
